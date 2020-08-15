@@ -34,6 +34,6 @@ jobs:
     - name: "miss_hit: checking code quality"
       script: mh_metric . --ci
     - name: "miss_hit: checking code style"
-    - script: mh_style .
+      script: mh_style .
       
     
