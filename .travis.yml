@@ -1,7 +1,15 @@
 # Travis CI (https://travis-ci.org/)
+# This will only work on your repo if you have an account on travis and you
+# have set it up to run continuous integration on this this repo
 
-language: c
-dist: bionic # based on bionic beaver ubuntu distribution
+# Linux distribution
+dist: bionic
+
+# Language and version
+language: python
+python:
+  - "3.6" # current default Python on Travis CI
+
 cache:
   apt: true # only works with Pro version
 
@@ -14,33 +22,18 @@ before_install:
   # install octave
   - travis_retry sudo apt-get -y install octave
   - travis_retry sudo apt-get -y install liboctave-dev
-  # install javascript
-  - travis_retry sudo apt-get -y install nodejs
-  - travis_retry sudo apt-get -y install npm
   # install miss_hit linter
-  - cd .. && git clone https://github.com/florianschanda/miss_hit.git && export PATH=$PATH:`pwd`/miss_hit && cd CPP_BIDS
-
-
-install:
-  # make octave file the JSONio submodule
-  - cd lib/JSONio; mkoctfile --mex jsonread.c jsmn.c -DJSMN_PARENT_LINKS; cd ../..
-  - octave $OCTFLAGS --eval "addpath (pwd); savepath ();"
-  # Install BIDS-Validator
-  - sudo npm install -g bids-validator
+  - pip3 install miss_hit
 
 before_script:
   # Add to src functions to path
   - octave $OCTFLAGS --eval "addpath(genpath(fullfile(pwd, 'src'))); savepath ();"
-  # Change current directory
-  - cd manualTests
 
 jobs:
   include:
-    - stage: "BIDS validator"
-      name: "Create and check dataset"
-      script: octave $OCTFLAGS --eval "test_makeRawDataset" && bids-validator `pwd`/output/rawdata/ --ignoreNiftiHeaders
-    - stage: "Linter"
-      name: "miss_hit"
-      script: cd .. && mh_style `pwd`
+    - name: "miss_hit: checking code quality"
+      script: mh_metric . --ci
+    - name: "miss_hit: checking code style"
+    - script: mh_style .
       
     

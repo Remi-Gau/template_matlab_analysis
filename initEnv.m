@@ -14,8 +14,12 @@
 
 function initEnv
 
-    octaveVersion = '4.0.3';
+    %
     matlabVersion = '9.2.0';
+
+    % required package list
+    octaveVersion = '4.0.3';
+    installlist = {'statistics', 'image'};
 
     if isOctave
 
@@ -24,7 +28,7 @@ function initEnv
             error('Minimum required Octave version: %s', octaveVersion);
         end
 
-        installlist = {'statistics', 'image'};
+        
         for ii = 1:length(installlist)
             try
                 % Try loading Octave packages
