@@ -28,7 +28,6 @@ function initEnv
             error('Minimum required Octave version: %s', octaveVersion);
         end
 
-        
         for ii = 1:length(installlist)
             try
                 % Try loading Octave packages
