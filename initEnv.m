@@ -56,8 +56,8 @@ function initEnv
 
     if numel(dir(libDirectory)) <= 2 % Means that the external is empty
         error(['Git submodules are not cloned!', ...
-              'Try this in your terminal:', ...
-              ' git submodule update --recursive ']);
+               'Try this in your terminal:', ...
+               ' git submodule update --recursive ']);
     else
         addDependencies();
     end
