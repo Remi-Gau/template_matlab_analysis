@@ -1,12 +1,10 @@
 Function description
 ********************
-  
-List of functions in the ``src`` folder.  
+
+List of functions in the ``src`` folder.
 
 ----
 
-.. automodule:: src 
+.. automodule:: src
 
 .. autofunction:: insert_function_name_here
-
-
