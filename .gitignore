@@ -19,6 +19,9 @@ coverage_html
 # documentation
 docs/build
 
+# notebooks
+.ipynb_checkpoints
+
 ## MATLAB / OCTAVE gitignore template
 
 # From : https://github.com/github/gitignore/blob/master/Global/MATLAB.gitignore
