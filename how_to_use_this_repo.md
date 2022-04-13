@@ -26,4 +26,3 @@ download the code and the pre-set dependencies like this.
 ```bash
 git clone URL_to_your_repo
 ```
-
