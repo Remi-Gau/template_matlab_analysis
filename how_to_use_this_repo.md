@@ -26,3 +26,8 @@ download the code and the pre-set dependencies like this.
 ```bash
 git clone URL_to_your_repo
 ```
+
+## Configuration
+
+Check the [CONTRIBUTING.md](CONTRIBUTING.md) for more information on setting up
+this repo.

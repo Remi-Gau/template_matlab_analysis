@@ -2,219 +2,104 @@
 
 Information for anyone who would like to contribute to this repository.
 
+- [CONTRIBUTING](#contributing)
+    - [Repository map](#repository-map)
+    - [Makefile](#makefile)
+    - [Style guide](#style-guide)
+    - [pre-commit](#pre-commit)
+    - [Tests](#tests)
+            - [Adding new tests](#adding-new-tests)
+    - [Docs](#docs)
+        - [`conf.py` for matlab doc](#confpy-for-matlab-doc)
+        - [reStructured text markup](#restructured-text-markup)
+        - [Build the documentation locally](#build-the-documentation-locally)
+        - [Build the documentation with Read the Docs](#build-the-documentation-with-read-the-docs)
+    - [Continuous integration](#continuous-integration)
+
 ## Repository map
 
 ```bash
 ├── .git
-├── .github
-│   └── workflows         # Github continuous integration set up
-├── examples              # Python demos: jupyter notebooks
-│   ├── data
-│   ├── example1outputs
-│   ├── example2outputs
-├── glmsingle             # Python implementation
-│   ├── cod
-│   ├── design
-│   ├── gmm
-│   ├── hrf
-│   ├── ols
-│   ├── ssq
-│   └── utils
-├── matlab                # MATLAB implementation
-│   ├── examples          # MATLAB demos
-│   ├── fracridge
-│   └── utilities
-└── tests                 # Python and MATLAB tests
-    └── data
-
+├── .github                # where you put anything github related
+│   └── workflows          # where you define your github actions
+│       └── build.yml      # a yml file that defines a github action
+├── docs                   # where you write your documentation using sphinx
+│   ├── make.bat
+│   ├── Makefile
+│   └── source             # for the reStructured text files for your doc
+│       └── conf.py
+├── lib
+├── src                  # where your code goes
+├── tests                # where you put your unit tests
+├── LICENSE
+├── README.md
+├── miss_hit.cfg
+└── setup.m             # a .m file to set up your project (adds the right folder to the path)
 ```
 
-### Makefile
-
-### pre-commit
-
-### Style guide
-
-### Tests
-
-### Docs
-
-# Setting up sphinx to create a matlab doc
-
-## Set up virtual environment
-
-```bash
-virtualenv -p python3 your_repo_name
-source your_repo_name/bin/activate
-
-pip install -r requirements.txt
-```
-
-## Quick start on the doc
-
-See the [sphinx doc](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
-for more.
-
-This
-[blog post](https://medium.com/@richdayandnight/a-simple-tutorial-on-how-to-document-your-python-project-using-sphinx-and-rinohtype-177c22a15b5b)
-is also useful.
-
-```bash
-cd docs
-sphinx-quickstart # launch a basic interactive set up of sphinx
-```
-
-Answer the questions on prompt.
-
-## Setting up conf.py for matlab doc
-
-Following the documentation from
-[matlabdomain for sphinx](https://github.com/sphinx-contrib/matlabdomain).
-
-Specify the extensions you are using:
-
-```python
-extensions = [
-    'sphinxcontrib.matlab',
-    'sphinx.ext.autodoc']
-```
-
-`matlab_src_dir` in `docs/source/conf.py` should have the path (relative to
-`conf.py`) to the folder containing your matlab code:
-
-```python
-matlab_src_dir = os.path.dirname(os.path.abspath('../../src'))
-```
-
-## reStructured text markup
-
-reStructured text mark up primers:
-
--   on the [sphinx site](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
-
--   more
-    [python oriented](https://pythonhosted.org/an_example_pypi_project/sphinx.html)
-
--   typical doc strings templates
-    -   [google way](https://www.sphinx-doc.org/en/master/usage/extensions/example_google.html)
-    -   [numpy](https://www.sphinx-doc.org/en/master/usage/extensions/example_numpy.html#example-numpy)
-
-## "Templates"
-
-The templates to use for the doc are in the `src/templates` folder.
-
-You then just need to insert this in your `.rst` file for the documentation to
-be done automatically.
-
-```rst
-
-.. automodule:: src.folder_name .. <-- This is necessary for auto-documenting the rest
-
-.. autofunction:: function to document
-
-```
-
-To get the filenames of all the functions in a folder:
-
-``` bash
-ls -l src/*.m | cut -c42- | rev | cut -c 3- | rev
-```
-
-Increase the `42` to crop more characters at the beginning.
-
-Change the `3` to crop more characters at the end.
-
-## Build the documentation locally
-
-From the `docs` directory:
-
-```bash
-sphinx-build -b html source build
-```
-
-This will build an html version of the doc in the `build` folder.
-
-## Build the documentation with Read the Docs
-
-Add a [`.readthedocs.yml`](../.readthedocs.yml) file in the root of your repo.
-
-See [HERE](https://docs.readthedocs.io/en/stable/config-file/v2.html) for
-details.
-
-You can then trigger the build of the doc by going to the
-[read the docs website](https://readthedocs.org).
-
-You might need to be added as a maintainer of the doc.
-
-The doc can be built from any branch of a repo.
-
-
-### Continuous integration
-
-
-
-This will set up everything automatically in your current directory.
-
-## Content
 
 ```bash
 ├── .git
-│   ├── COMMIT_EDITMSG
-│   ├── FETCH_HEAD
-│   ├── HEAD
-│   ├── ORIG_HEAD
-│   ├── branches
-│   ├── config
-│   ├── description
-│   ├── hooks
-│   │   ├── pre-commit.sample
-│   │   └── pre-push.sample
-│   ├── ...
-│   └── ...
-├── .github                # where you put anything github related
-│   └── workflows          # where you define your github actions
-│       └── moxunit.yml    # a yaml file that defines a github action
-├── lib                    # where you put the code from external libraries (mathworks website or other github repositories)
-│   └── README.md
-├── src                  # WHERE YOU PUT YOUR CODE
-│   ├── README.md
-│   └── miss_hit.cfg
-├── docs                 # where you write your documentation using sphinx
+├── .github                 # where you put anything github related
+│   └── workflows           # where you define your github actions
+│       └── build.yml       # a yml file that defines a github workflow
+├── docs
+│   ├── create_manual.sh
 │   ├── make.bat
 │   ├── Makefile
-│   ├── README.md
-│   ├── requirements.txt # to set up the python environment for the doc
-│   └── source           # the actual reStructured text file for your doc
-│       ├── conf.py
-│       ├── function_description.rst
-│       ├── index.rst
-│       ├── _static
-│       └── _templates
-├── tests               # where you put your unit tests
-|   ├── README.md
-|   └── miss_hit.cfg
-├── .travis.yml         # where you define the continuous integration done by Travis
+│   └── source              # for the reStructured text files for your doc
+│       └── conf.py         # configuration for the doc
+├── src                     # WHERE YOUR CODE GO
+├── lib                     # for external libraries
+├── tests                   # WHERE YOUR TESTS GO
+├── CITATION.cff            # on how to cite
+├── CONTRIBUTING.md
 ├── LICENSE
+├── .pre-commit-config.yaml # config for pre-commit
+├── .readthedocs.yml        # config fot serve the doc on read the docs
+├── Makefile
+├── miss_hit.cfg            # config file for miss_hit linter
 ├── README.md
-├── miss_hit.cfg        # configuration file for the matlab miss hit linter
-└── initEnv.m           # a .m file to set up your project (adds the right folder to the path)
+├── requirements.txt        # python dependencies for development
+├── run_tests.m             # to run all tests
+├── setup.m                 # to add the correct folders to the path
+└── version.txt
 ```
 
-## Keeping your code stylish: miss hit linter
+## Makefile
 
-### Matlab code style guide and quality
+A `Makefile` is used to help set / and automate some things.
 
-We use the [MISS_HIT linter](https://github.com/florianschanda/miss_hit/) to
-automatically enforce / fix some code style issues and check for code quality.
+In a terminal type `make help` to see what some of the different "recipes" you
+can run with this `Makefile`.
 
-The linter is a python package that can be installed with:
+See
+[here for a short intro on using `Makefiles`](https://the-turing-way.netlify.app/reproducible-research/make.html)
+
+## Style guide
+
+The [`miss_hit` python package](https://misshit.org/) is used to help ensure a
+consistent coding style for some of the MATLAB code.
+
+`miss_hit` can check code style, do a certain amount of automatic code
+reformating and prevent the code complexity from getting out of hand by running
+static code analysis (Static analysis can is a way to measure and track software
+quality metrics without additional code like tests).
+
+`miss_hit` is quite configurable via the use of the
+[MISS_HIT configuration file](./miss_hit.cfg).
+
+Install `miss_hit`:
 
 ```bash
-pip3 install --user miss_hit
+$ pip3 install miss_hit
 ```
 
-The rules followed by MISS_HIT are in the
-[MISS_HIT configuration file](./miss_hit.cfg).
+It is also included in `requirements_dev.txt`, so it will installed by running:
+
+```bash
+$ pip3 install -r requirements_dev.txt
+```
 
 To check the code style of the whole repository, you can can simply type:
 
@@ -242,20 +127,174 @@ configuration file, type:
 mh_metric . --ci
 ```
 
-The code style and quality is also checked during the
-[continuous integration](.github/workflows/miss_hit.yml).
+You can run all miss_hit commands at once by typing `make lint`.
+
+The code style and quality is also checked during the continuous integration.
 
 For more information about MISS_HIT see its
 [documentation](https://florianschanda.github.io/miss_hit/).
 
-## Python environment
+## pre-commit
 
-More on this
-[here](https://the-turing-way.netlify.app/reproducible-research/renv/renv-package.html)
+You can use the [`pre-commit` python package](https://pre-commit.com/) in this
+repo to make sure you only commit properly formatted files (for example `.yml`
+files).
 
-## Testing your code
+1. Install `pre-commit`
+
+```bash
+$ pip3 install pre-commit
+```
+
+It is also included in `requirements.txt`, so it will installed by running:
+
+```bash
+$ pip3 install -r requirements.txt
+```
+
+The `.pre-commit-config.yml` file defines the checks to run when committing
+files.
+
+1. Run the following command to install the `pre-commit` "hooks"
+
+```bash
+$ pre-commit install
+```
+
+The pre-commit hooks will be run on every staged files when committing, to make
+sure they comply with the rules defined in the `.pre-commit-config.yml`
+
+## Tests
 
 The [MOxUnit testing framework](https://github.com/MOxUnit/MOxUnit) is set up to
 run tests automatically for any tests in the `tests` folder.
 
+For an introduction to testing see
+[here](https://the-turing-way.netlify.app/reproducible-research/make.html).
+
+Running the tests require to have the following toolboxes in your MATLAB path:
+
+- the [MOxUnit testing framework](https://github.com/MOxUnit/MOxUnit) to run the
+  tests
+  ([see installation procedure](https://github.com/MOxUnit/MOxUnit#installation))
+- [MOcov](https://github.com/MOcov/MOcov)) to get a code coverage estimate
+  ([see installation procedure](https://github.com/MOcov/MOcov#installation))
+
+All the tests are in the `tests` folder in files starting with `test_*.m`.
+
+To run **all** the tests and get code coverage, you can
+
+1. type the following in a terminal
+
+```
+make coverage
+```
+
+1. run `moxunit_runtests` in MATLAB to run all `test_*.m` files in in the
+   present working directory.
+
+1. run the `run_tests.m` in MATLAB
+
+You can also run all the tests contained in a specific `test_*.m` file directly,
+by running that file only.
+
+#### Adding new tests
+
+A typical MoxUnit test file starts with with `test_` and would look something
+like this.
+
+```matlab
+function test_suite=test_sum_of_squares
+
+    try % assignment of 'localfunctions' is necessary in Matlab >= 2016
+        test_functions=localfunctions();
+    catch % no problem; early Matlab versions can use initTestSuite fine
+    end
+    initTestSuite();
+
+end
+
+function test_sum_of_squares_basic
+
+    % given
+    a = 2;
+    b = 3;
+
+    % when
+    result = sum_of_squares([a, b])
+
+    % then
+    expected = 13;
+    assertEqual(result, expected);
+
+end
+
+% New tests can added as new sub functions
+
+```
+
+## Docs
+
+### `conf.py` for matlab doc
+
+Following the documentation from
+[matlabdomain for sphinx](https://github.com/sphinx-contrib/matlabdomain).
+
+The extensions used are mentioned here:
+
+```python
+extensions = [
+    'sphinxcontrib.matlab',
+    'sphinx.ext.autodoc']
+```
+
+`matlab_src_dir` in `docs/source/conf.py` should have the path (relative to
+`conf.py`) to the folder containing your matlab code:
+
+```python
+matlab_src_dir = os.path.dirname(os.path.abspath('../../src'))
+```
+
+### reStructured text markup
+
+reStructured text mark up primers:
+
+- on the
+  [sphinx site](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html)
+
+- more
+  [python oriented](https://pythonhosted.org/an_example_pypi_project/sphinx.html)
+
+- typical doc strings templates
+  - [google way](https://www.sphinx-doc.org/en/master/usage/extensions/example_google.html)
+  - [numpy](https://www.sphinx-doc.org/en/master/usage/extensions/example_numpy.html#example-numpy)
+
+### Build the documentation locally
+
+From the `docs` directory:
+
+```bash
+make html
+```
+
+This will build an html version of the doc in the `build` folder.
+
+### Build the documentation with Read the Docs
+
+Add a [`.readthedocs.yml`](../.readthedocs.yml) file in the root of your repo.
+
+See [HERE](https://docs.readthedocs.io/en/stable/config-file/v2.html) for
+details.
+
+You can then trigger the build of the doc by going to the
+[read the docs website](https://readthedocs.org).
+
+You might need to be added as a maintainer of the doc.
+
+The doc can be built for any branch of a repo.
+
 ## Continuous integration
+
+We use Github to run several workflows for continuous integration.
+
+<!-- TODO -->

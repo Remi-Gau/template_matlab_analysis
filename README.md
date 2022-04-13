@@ -12,6 +12,6 @@ When you have set up your repo you may need to change those badges
 <!-- TODO add matlab tests badge -->
 <!-- TODO why badges show "no status"? -->
 
-# Template repository for matlab analysis project
+# Template repository for MATLAB / Octave projects
 
 See [`how_to_use_this_repo.md`](how_to_use_this_repo.md)
