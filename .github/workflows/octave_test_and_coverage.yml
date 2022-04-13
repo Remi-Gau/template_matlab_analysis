@@ -1,9 +1,8 @@
-name: unit_test_and_coverage
+name: "OCTAVE: test and coverage"
 
 on:
   push:
-    branches:
-      - master
+    branches: ["master", "main", "dev"]
   pull_request:
     branches: ["*"]
 
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 1
