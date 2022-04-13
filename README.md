@@ -2,16 +2,16 @@
 When you have set up your repo you may need to change those badges
 -->
 
-[![code_quality](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/code_quality.yml/badge.svg?branch=master)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/code_quality.yml)
-[![code_quality](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/code_quality.yml/badge.svg)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/code_quality.yml)
-[![miss hit: code style](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit_style.yml/badge.svg)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit_style.yml)
-[![OCTAVE: tests and coverage](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/octave_test_and_coverage.yml/badge.svg)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/octave_test_and_coverage.yml)
+[![MISS_HIT: code style](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit_code_style.yml/badge.svg?branch=main)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit_code_style.yml)
+[![MISS_HIT: code quality](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit_code_quality.yml/badge.svg?branch=main)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit_code_quality.yml)
+[![Octave: test and coverage](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/octave_test_and_coverage.yml/badge.svg?branch=main)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/octave_test_and_coverage.yml)
 [![codecov](https://codecov.io/gh/Remi-Gau/template_matlab_analysis/branch/master/graph/badge.svg?token=aFXb7WSAsm)](https://codecov.io/gh/Remi-Gau/template_matlab_analysis)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Documentation Status: latest](https://readthedocs.org/projects/template_matlab_analysis/badge/?version=latest)](https://template_matlab_analysis.readthedocs.io/en/stable/?badge=latest)
 
 <!-- TODO add matlab tests badge -->
 <!-- TODO why badges show "no status"? -->
 
 # Template repository for matlab analysis project
 
-See [`how_to_use_this_repo.md`](to see how to use this template).
+See [`how_to_use_this_repo.md`](how_to_use_this_repo.md)
