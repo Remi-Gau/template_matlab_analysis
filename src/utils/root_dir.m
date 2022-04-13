@@ -6,7 +6,7 @@ function retval = root_dir()
     %
     %   retval = root_dir()
     %
-    % :returns: :root_dir: (path)
+    % :returns: - :root_dir: (path)
     %
     % (C) Copyright 2022 Remi Gau
 

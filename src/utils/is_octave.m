@@ -4,7 +4,7 @@ function retval = is_octave
     %
     % USAGE::
     %
-    %   retval = is_octave
+    %   retval = is_octave()
     %
     %
     % (C) Copyright 2022 Remi Gau
