@@ -1,4 +1,4 @@
-name: "OCTAVE: test and coverage"
+name: "Octave: test and coverage"
 
 on:
   push:

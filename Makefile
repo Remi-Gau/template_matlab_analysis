@@ -33,12 +33,14 @@ export PRINT_HELP_PYSCRIPT
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
-clean: clean-test ## remove all build, test, coverage artifacts
+clean: clean-test clean-doc ## remove all build, test, coverage artifacts
 
 clean-test: ## remove test and coverage artifacts
 	rm -rf coverage_html
-	rm test_report.log
+	rm -f test_report.log
 
+clean-doc: ## remove doc buils
+	rm -rf docs/build
 version.txt: ## update version.txt from CITATION.CFF info
 	grep -w "^version" CITATION.cff | sed "s/version: /v/g" > version.txt
 

@@ -1,4 +1,4 @@
-name: "miss hit: code style"
+name: "MISS_HIT: code quality"
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: ["*"]
 
 jobs:
-  build:
+  code-quality:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +26,10 @@ jobs:
           python -m pip install --upgrade pip setuptools
           pip3 install -r requirements.txt
 
-      - name: MISS_HIT Code style
+      - name: MISS_HIT Metrics
         run: |
-          mh_style
+          mh_metric --ci
+
+      - name: MISS_HIT Bug finder
+        run: |
+          mh_lint
