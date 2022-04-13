@@ -36,6 +36,8 @@ end
 
 function test_my_fibonacci_error()
 
-    assertExceptionThrown(@()my_fibonacci(-1), 'MATLAB:InputParser:ArgumentFailedValidation');
+    if ~is_octave()
+        assertExceptionThrown(@()my_fibonacci(-1), 'MATLAB:InputParser:ArgumentFailedValidation');
+    end
 
 end

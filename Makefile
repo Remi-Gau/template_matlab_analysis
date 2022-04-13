@@ -59,6 +59,3 @@ lint: ## lint and checks matlab code
 coverage: run_tests.m ## runs tests and display coverage
 	$(MATLAB) $(MATLAB_ARG) -r "run_tests; exit()"
 	$(BROWSER) coverage_html/index.html
-
-
-

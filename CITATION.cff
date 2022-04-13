@@ -1,3 +1,7 @@
+# Check https://citation-file-format.github.io/
+# and the schema doc https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
+# for more info
+
 cff-version: 1.2.0
 
 title: "FIXME"
@@ -16,8 +20,8 @@ contact:
     given-names: FIXME
 
 authors:
-- family-names: FIXME
-  given-names: FIXME
+  - family-names: FIXME
+    given-names: FIXME
 
 license: GPL-3.0
 

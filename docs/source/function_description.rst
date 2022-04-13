@@ -7,4 +7,13 @@ List of functions in the ``src`` folder.
 
 .. automodule:: src
 
-.. autofunction:: insert_function_name_here
+.. autofunction:: my_fibonacci
+
+Utilities
+=========
+
+.. automodule:: src.utils
+
+.. autofunction:: is_octave
+.. autofunction:: root_dir
+.. autofunction:: get_version

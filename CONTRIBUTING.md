@@ -1,3 +1,44 @@
+# CONTRIBUTING
+
+Information for anyone who would like to contribute to this repository.
+
+## Repository map
+
+```bash
+├── .git
+├── .github
+│   └── workflows         # Github continuous integration set up
+├── examples              # Python demos: jupyter notebooks
+│   ├── data
+│   ├── example1outputs
+│   ├── example2outputs
+├── glmsingle             # Python implementation
+│   ├── cod
+│   ├── design
+│   ├── gmm
+│   ├── hrf
+│   ├── ols
+│   ├── ssq
+│   └── utils
+├── matlab                # MATLAB implementation
+│   ├── examples          # MATLAB demos
+│   ├── fracridge
+│   └── utilities
+└── tests                 # Python and MATLAB tests
+    └── data
+
+```
+
+### Makefile
+
+### pre-commit
+
+### Style guide
+
+### Tests
+
+### Docs
+
 # Setting up sphinx to create a matlab doc
 
 ## Set up virtual environment
@@ -106,3 +147,6 @@ You can then trigger the build of the doc by going to the
 You might need to be added as a maintainer of the doc.
 
 The doc can be built from any branch of a repo.
+
+
+### Continuous integration
