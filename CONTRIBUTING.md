@@ -8,7 +8,7 @@ Information for anyone who would like to contribute to this repository.
     - [Style guide](#style-guide)
     - [pre-commit](#pre-commit)
     - [Tests](#tests)
-            - [Adding new tests](#adding-new-tests)
+        - [Adding new tests](#adding-new-tests)
     - [Docs](#docs)
         - [`conf.py` for matlab doc](#confpy-for-matlab-doc)
         - [reStructured text markup](#restructured-text-markup)
@@ -178,7 +178,7 @@ make coverage
 You can also run all the tests contained in a specific `test_*.m` file directly,
 by running that file only.
 
-#### Adding new tests
+### Adding new tests
 
 A typical MoxUnit test file starts with with `test_` and would look something
 like this.
