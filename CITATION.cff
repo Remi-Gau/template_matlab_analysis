@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+
+title: "FIXME"
+
+version: 0.1.0
+
+abstract: FIXME
+
+message: "If you use this software, please cite it as below."
+
+repository-code: "https://github.com/your_gh_username/FIXME"
+
+contact:
+  - email: FIXME
+    family-names: FIXME
+    given-names: FIXME
+
+authors:
+- family-names: FIXME
+  given-names: FIXME
+
+license: GPL-3.0
+
+keywords:
+  - FIXME

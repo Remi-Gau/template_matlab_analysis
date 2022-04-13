@@ -1,13 +1,20 @@
 *DS_Store
 
+# IDE
+.vscode
+
 ## virtual env
-cpp_spm/*
 env/*
 venv/*
 
 # exclude content of logfiles folders
 *.tsv
 *.mat
+
+# tests artefacts
+test_report.log
+coverage.xml
+coverage_html
 
 ## MATLAB / OCTAVE gitignore template
 
