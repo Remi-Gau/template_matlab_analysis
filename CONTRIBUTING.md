@@ -20,26 +20,6 @@ Information for anyone who would like to contribute to this repository.
 
 ```bash
 ├── .git
-├── .github                # where you put anything github related
-│   └── workflows          # where you define your github actions
-│       └── build.yml      # a yml file that defines a github action
-├── docs                   # where you write your documentation using sphinx
-│   ├── make.bat
-│   ├── Makefile
-│   └── source             # for the reStructured text files for your doc
-│       └── conf.py
-├── lib
-├── src                  # where your code goes
-├── tests                # where you put your unit tests
-├── LICENSE
-├── README.md
-├── miss_hit.cfg
-└── setup.m             # a .m file to set up your project (adds the right folder to the path)
-```
-
-
-```bash
-├── .git
 ├── .github                 # where you put anything github related
 │   └── workflows           # where you define your github actions
 │       └── build.yml       # a yml file that defines a github workflow
