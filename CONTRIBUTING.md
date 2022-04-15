@@ -3,18 +3,21 @@
 Information for anyone who would like to contribute to this repository.
 
 - [CONTRIBUTING](#contributing)
-    - [Repository map](#repository-map)
-    - [Makefile](#makefile)
-    - [Style guide](#style-guide)
-    - [pre-commit](#pre-commit)
-    - [Tests](#tests)
-        - [Adding new tests](#adding-new-tests)
-    - [Docs](#docs)
-        - [`conf.py` for matlab doc](#confpy-for-matlab-doc)
-        - [reStructured text markup](#restructured-text-markup)
-        - [Build the documentation locally](#build-the-documentation-locally)
-        - [Build the documentation with Read the Docs](#build-the-documentation-with-read-the-docs)
-    - [Continuous integration](#continuous-integration)
+  - [Repository map](#repository-map)
+  - [Set up](#set-up)
+  - [Makefile](#makefile)
+  - [Style guide](#style-guide)
+  - [pre-commit](#pre-commit)
+  - [Tests](#tests)
+    - [Adding new tests](#adding-new-tests)
+  - [Docs](#docs)
+    - [`conf.py` for matlab doc](#confpy-for-matlab-doc)
+    - [reStructured text markup](#restructured-text-markup)
+    - [Build the documentation locally](#build-the-documentation-locally)
+    - [Serve the documentation on Read the Docs](#serve-the-documentation-on-read-the-docs)
+  - [Demos and binder](#demos-and-binder)
+  - [Continuous integration](#continuous-integration)
+  - [Notebooks](#notebooks)
 
 ## Repository map
 
@@ -44,6 +47,15 @@ Information for anyone who would like to contribute to this repository.
 ├── run_tests.m             # to run all tests
 ├── setup.m                 # to add the correct folders to the path
 └── version.txt
+```
+
+## Set up
+
+To install all the development tools, you will need to have Python installed
+(>=3.6) and run:
+
+```bash
+$ pip3 install -r requirements_dev.txt
 ```
 
 ## Makefile
@@ -259,7 +271,7 @@ make html
 
 This will build an html version of the doc in the `build` folder.
 
-### Build the documentation with Read the Docs
+### Serve the documentation on Read the Docs
 
 Add a [`.readthedocs.yml`](../.readthedocs.yml) file in the root of your repo.
 
@@ -273,8 +285,16 @@ You might need to be added as a maintainer of the doc.
 
 The doc can be built for any branch of a repo.
 
+## Demos and binder
+
+<!-- TODO -->
+
 ## Continuous integration
 
 We use Github to run several workflows for continuous integration.
 
 <!-- TODO -->
+
+## Notebooks
+
+Will only work if you use Octave.

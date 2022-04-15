@@ -8,6 +8,7 @@ When you have set up your repo you may need to change those badges
 [![codecov](https://codecov.io/gh/Remi-Gau/template_matlab_analysis/branch/master/graph/badge.svg?token=aFXb7WSAsm)](https://codecov.io/gh/Remi-Gau/template_matlab_analysis)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Documentation Status: latest](https://readthedocs.org/projects/template_matlab_analysis/badge/?version=latest)](https://template_matlab_analysis.readthedocs.io/en/latest/?badge=latest)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Remi-Gau/template_matlab_analysis/main)
 
 <!-- TODO add matlab tests badge -->
 <!-- TODO why badges show "no status"? -->
