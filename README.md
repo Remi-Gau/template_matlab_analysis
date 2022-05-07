@@ -21,16 +21,16 @@ When you have set up your repo you may need to change those badges
 
 1. Click the green button `Use this template`.
 
-<!-- Add image -->
+![](https://user-images.githubusercontent.com/6961185/167254070-b6fd34dc-1334-41c5-b0a6-eb7234f008d9.jpg)
 
 2. Give a name to the repository you want to create. Something short that
    contains the name of your experiment: `analysis_my_study`.
 
-<!-- Add image -->
+![](https://user-images.githubusercontent.com/6961185/167254100-ad4eaa48-36a9-4dee-947e-d6957ab6d8a5.png)
 
-3. Decide if you want this new repo to be public or private.
+1. Decide if you want this new repo to be public or private.
 
-4. Click on `Create repository from template`
+2. Click on `Create repository from template`
 
 You now have a copy of the template on your Github account. You can then
 download the code and the pre-set dependencies like this.
