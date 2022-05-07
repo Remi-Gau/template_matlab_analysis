@@ -8,6 +8,7 @@ Welcome to CPP BIDS documentation!
    :caption: Content
 
    function_description
+   documentation_styles
 
 
 Indices and tables

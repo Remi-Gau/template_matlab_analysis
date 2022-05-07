@@ -21,3 +21,6 @@ help:
 
 doc:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)"
+
+view: doc
+	firefox build/index.html
