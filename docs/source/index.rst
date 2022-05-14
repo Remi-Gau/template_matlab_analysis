@@ -7,6 +7,7 @@ Welcome to CPP BIDS documentation!
    :maxdepth: 2
    :caption: Content
 
+   general_information
    function_description
    documentation_styles
 

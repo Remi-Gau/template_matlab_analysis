@@ -31,7 +31,12 @@ release = "v0.1.0"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["sphinxcontrib.matlab", "sphinx.ext.autodoc", "sphinx_copybutton"]
+extensions = [
+    "sphinxcontrib.matlab",
+    "sphinx.ext.autodoc",
+    "sphinx_copybutton",
+    "myst_parser",
+]
 matlab_src_dir = os.path.dirname(os.path.abspath("../../src"))
 primary_domain = "mat"
 
