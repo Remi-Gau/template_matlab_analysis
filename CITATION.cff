@@ -15,7 +15,7 @@ message: "If you use this software, please cite it as below."
 repository-code: "https://github.com/your_gh_username/FIXME"
 
 contact:
-  - email: FIXME
+  - email: me@somewhere.com
     family-names: FIXME
     given-names: FIXME
 
