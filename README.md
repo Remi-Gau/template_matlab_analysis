@@ -10,6 +10,12 @@ When you have set up your repo you may need to change those badges
 [![Documentation Status: latest](https://readthedocs.org/projects/template_matlab_analysis/badge/?version=latest)](https://template_matlab_analysis.readthedocs.io/en/latest/?badge=latest)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Remi-Gau/template_matlab_analysis/main)
 
+- [Template repository for MATLAB / Octave projects](#template-repository-for-matlab--octave-projects)
+   - [How to install and use this template](#how-to-install-and-use-this-template)
+      - [Install with Git](#install-with-git)
+      - [Install with cookiecutter](#install-with-cookiecutter)
+   - [Configuration](#configuration)
+
 # Template repository for MATLAB / Octave projects
 
 ## How to install and use this template
