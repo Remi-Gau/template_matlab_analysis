@@ -12,7 +12,7 @@ When you have set up your repo you may need to change those badges
 
 - [Template repository for MATLAB / Octave projects](#template-repository-for-matlab--octave-projects)
    - [How to install and use this template](#how-to-install-and-use-this-template)
-      - [Install with Git](#install-with-git)
+      - [Install with Github](#install-with-github)
       - [Install with cookiecutter](#install-with-cookiecutter)
    - [Configuration](#configuration)
 
@@ -20,7 +20,7 @@ When you have set up your repo you may need to change those badges
 
 ## How to install and use this template
 
-### Install with Git
+### Install with Github
 
 1. Click the green button `Use this template`.
 
