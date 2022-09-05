@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Install MATLAB ${{ matrix.matlab-version }}
-        uses: matlab-actions/setup-matlab@v1.0.1
+        uses: matlab-actions/setup-matlab@v1.2.0
         with:
           release: ${{ matrix.matlab-version }}
 
