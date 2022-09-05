@@ -45,6 +45,20 @@ When you have set up your repo you may need to change those badges
 git clone URL_to_your_repo
 ```
 
+### Install with cookiecutter
+
+Install Cookiecutter:
+
+```bash
+pip install -U cookiecutter
+```
+
+Generate project:
+
+```bash
+cookiecutter https://github.com/Remi-Gau/cookiecutter_matlab_analysis.git
+```
+
 ## Configuration
 
 Check the
