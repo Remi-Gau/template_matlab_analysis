@@ -39,7 +39,7 @@ Information for anyone who would like to contribute to this repository.
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── .pre-commit-config.yaml # config for pre-commit
-├── .readthedocs.yml        # config fot serve the doc on read the docs
+├── .readthedocs.yml        # config for serve the doc on read the docs
 ├── Makefile
 ├── miss_hit.cfg            # config file for miss_hit linter
 ├── README.md
@@ -74,7 +74,7 @@ The [`miss_hit` python package](https://misshit.org/) is used to help ensure a
 consistent coding style for some of the MATLAB code.
 
 `miss_hit` can check code style, do a certain amount of automatic code
-reformating and prevent the code complexity from getting out of hand by running
+reformatting and prevent the code complexity from getting out of hand by running
 static code analysis (Static analysis can is a way to measure and track software
 quality metrics without additional code like tests).
 
