@@ -16,7 +16,7 @@ function num_instances = count_line_rst_style_help(file, line)
     %
     % :returns: - :num_instances: (int) the number of times the line occurs.
     %
-    %
+
     % (C) Copyright 2022 Remi Gau
 
     % inspired from https://goodresearch.dev/docs.html#write-docstrings
