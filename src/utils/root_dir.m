@@ -8,6 +8,8 @@ function retval = root_dir()
     %
     % :returns: - :root_dir: (path)
     %
+
+
     % (C) Copyright 2022 Remi Gau
 
     retval = fullfile(fileparts(mfilename('fullpath')), '..', '..');
