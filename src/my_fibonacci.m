@@ -15,7 +15,7 @@ function results = my_fibonacci(varargin)
     %
     %     results = my_fibonacci(5);
     %
-    %
+
     % (C) Copyright 2022 Remi Gau
 
     is_positive_integer = @(n) (rem(n, 1) == 0) & (n > 0);
