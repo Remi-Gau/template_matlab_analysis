@@ -20,17 +20,17 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest] # "macos-latest" or "windows-latest" don't work (yet?)
-        matlab-version: ["R2020a"] # add more versions if needed: "R2021a"
+        version: [R2021a, R2021b, R2022a, R2022b]
+        os: [ubuntu-latest, macos-latest, windows-latest]
       fail-fast: false  # Don't cancel all jobs if one fails
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Install MATLAB ${{ matrix.matlab-version }}
+      - name: Install MATLAB
         uses: matlab-actions/setup-matlab@v1.2.4
         with:
-          release: ${{ matrix.matlab-version }}
+          release: ${{ matrix.version }}
 
       - uses: actions/checkout@v3
         with:
