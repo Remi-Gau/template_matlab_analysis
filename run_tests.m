@@ -22,7 +22,7 @@ function run_tests()
 
     if ispc
         success = moxunit_runtests(test_folder, '-verbose');
-                               
+
     else
         success = moxunit_runtests(test_folder, ...
                                    '-verbose', '-recursive', '-with_coverage', ...
