@@ -24,11 +24,13 @@ function run_tests()
                                '-cover_xml_file', 'coverage.xml', ...
                                '-cover_html_dir', fullfile(pwd, 'coverage_html'));
 
+    fileID = fopen('test_report.log', 'w');
     if success
-        system('echo 0 > test_report.log');
+        fprintf(fileID, '0');
     else
-        system('echo 1 > test_report.log');
+        fprintf(fileID, '1');
     end
+    fclose(fileID);
 
     toc;
 

@@ -1,18 +1,19 @@
+---
 name: miss_hit
 
 on:
   push:
     branches:
-      - main
-      - dev
+    - main
+    - dev
     paths:
-      - '**.m'
-      - '.github/workflows/miss_hit.yml'
+    - '**.m'
+    - .github/workflows/miss_hit.yml
   pull_request:
     branches: ['*']
     paths:
-      - '**.m'
-      - '.github/workflows/miss_hit.yml'
+    - '**.m'
+    - .github/workflows/miss_hit.yml
 jobs:
 
   miss_hit:
@@ -21,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        command: ["mh_style", "mh_metric --ci && mh_lint"]
+        command: [mh_style, mh_metric --ci && mh_lint]
       fail-fast: true  # cancel all jobs if one fails
 
     steps:
@@ -33,7 +34,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
