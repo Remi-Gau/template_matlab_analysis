@@ -18,17 +18,26 @@ function run_tests()
 
     test_folder = fullfile(pwd, 'tests');
 
-    success = moxunit_runtests(test_folder, ...
-                               '-verbose', '-recursive', '-with_coverage', ...
-                               '-cover', folder_to_cover, ...
-                               '-cover_xml_file', 'coverage.xml', ...
-                               '-cover_html_dir', fullfile(pwd, 'coverage_html'));
+    addpath(genpath(folder_to_cover));
 
-    if success
-        system('echo 0 > test_report.log');
+    if ispc
+        success = moxunit_runtests(test_folder, '-verbose');
+
     else
-        system('echo 1 > test_report.log');
+        success = moxunit_runtests(test_folder, ...
+                                   '-verbose', '-recursive', '-with_coverage', ...
+                                   '-cover', folder_to_cover, ...
+                                   '-cover_xml_file', 'coverage.xml', ...
+                                   '-cover_html_dir', fullfile(pwd, 'coverage_html'));
     end
+
+    fileID = fopen('test_report.log', 'w');
+    if success
+        fprintf(fileID, '0');
+    else
+        fprintf(fileID, '1');
+    end
+    fclose(fileID);
 
     toc;
 

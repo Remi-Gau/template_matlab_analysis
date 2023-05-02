@@ -1,16 +1,17 @@
+---
 name: validate CITATION.cff
 
 on:
   push:
     branches: ['*']
     paths:
-      - 'CITATION.cff'
-      - '.github/workflows/validate_cff.yml'
+    - CITATION.cff
+    - .github/workflows/validate_cff.yml
   pull_request:
     branches: ['*']
     paths:
-      - 'CITATION.cff'
-      - '.github/workflows/validate_cff.yml'
+    - CITATION.cff
+    - .github/workflows/validate_cff.yml
 
 jobs:
 
@@ -27,7 +28,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
