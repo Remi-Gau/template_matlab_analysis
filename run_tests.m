@@ -17,12 +17,12 @@ function run_tests()
     folder_to_cover = fullfile(pwd, 'src');
 
     test_folder = fullfile(pwd, 'tests');
-    
+
     addpath(genpath(folder_to_cover));
 
     if ispc
         success = moxunit_runtests(test_folder);
-                               
+
     else
         success = moxunit_runtests(test_folder, ...
                                    '-verbose', '-recursive', '-with_coverage', ...
