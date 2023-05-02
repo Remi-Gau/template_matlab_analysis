@@ -21,8 +21,8 @@ function run_tests()
     addpath(genpath(folder_to_cover));
 
     if ispc
-        success = moxunit_runtests(test_folder);
-
+        success = moxunit_runtests(test_folder, '-verbose');
+                               
     else
         success = moxunit_runtests(test_folder, ...
                                    '-verbose', '-recursive', '-with_coverage', ...
