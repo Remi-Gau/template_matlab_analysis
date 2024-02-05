@@ -68,3 +68,4 @@ jobs:
         flags: ${{ matrix.os }}_matlab-${{ matrix.version }}
         name: codecov-umbrella   # optional
         fail_ci_if_error: true   # optional (default = false)
+        token: ${{ secrets.CODECOV_TOKEN }}         
