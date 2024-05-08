@@ -3,7 +3,7 @@ name: 'Octave: test and coverage'
 
 on:
   push:
-    branches: [master, main, dev]
+    branches: [main]
   pull_request:
     branches: ['*']
 
