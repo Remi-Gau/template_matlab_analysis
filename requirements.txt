@@ -1,5 +1,4 @@
 # linting
-miss_hit
 pre-commit
 
 # doc
