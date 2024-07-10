@@ -2,34 +2,39 @@
 name: 'Octave: test and coverage'
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: ['*']
+    push:
+        branches: [main]
+    pull_request:
+        branches: ['*']
+
+# cancel previous run on that branch
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: true
-        fetch-depth: 1
+        steps:
+        -   uses: actions/checkout@v4
+            with:
+                submodules: true
+                fetch-depth: 1
 
-    - name: MOxUnit Action
-      uses: joergbrech/moxunit-action@v1.3.0
-      with:
-        tests: tests
-        src: src
-        with_coverage: true
-        cover_xml_file: coverage.xml
+        -   name: MOxUnit Action
+            uses: joergbrech/moxunit-action@v1.3.0
+            with:
+                tests: tests
+                src: src
+                with_coverage: true
+                cover_xml_file: coverage.xml
 
-    - name: Code coverage
-      uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}   # not required for public repos
-        file: coverage.xml   # optional
-        flags: octave   # optional
-        name: codecov-umbrella   # optional
-        fail_ci_if_error: false   # optional (default = false)
+        -   name: Code coverage
+            uses: codecov/codecov-action@v4
+            with:
+                token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+                file: coverage.xml # optional
+                flags: octave # optional
+                name: codecov-umbrella # optional
+                fail_ci_if_error: false # optional (default = false)

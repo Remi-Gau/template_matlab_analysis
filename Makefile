@@ -56,7 +56,9 @@ manual: ## create pdf of the doc
 .PHONY: lint coverage
 
 lint: ## lint and checks matlab code
-	mh_style --fix && mh_metric --ci && mh_lint
+	pip install pre-commit
+	pre-commit install
+	pre-commit run -a
 
 coverage: run_tests.m ## runs tests and display coverage
 	$(MATLAB) $(MATLAB_ARG) -r "run_tests; exit()"

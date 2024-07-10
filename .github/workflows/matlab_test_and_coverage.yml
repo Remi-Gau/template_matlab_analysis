@@ -11,64 +11,69 @@ name: 'MATLAB: test and coverage'
 # If tests pass, uploads coverage to codecov
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: ['*']
+    push:
+        branches: [main]
+    pull_request:
+        branches: ['*']
+
+# cancel previous run on that branch
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  matlab_tests:
+    matlab_tests:
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        version: [R2021a, R2023b]
-        include:
-        - os: macos-latest
-          version: R2023b
-      fail-fast: false  # Don't cancel all jobs if one fails
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest]
+                version: [R2021a, R2023b]
+                include:
+                -   os: macos-latest
+                    version: R2023b
+            fail-fast: false # Don't cancel all jobs if one fails
 
-    runs-on: ${{ matrix.os }}
+        runs-on: ${{ matrix.os }}
 
-    steps:
-    - name: Install MATLAB
-      uses: matlab-actions/setup-matlab@v2.2.0
-      with:
-        release: ${{ matrix.version }}
+        steps:
+        -   name: Install MATLAB
+            uses: matlab-actions/setup-matlab@v2.2.0
+            with:
+                release: ${{ matrix.version }}
 
-    - uses: actions/checkout@v4
-      with:
-        submodules: true
-        fetch-depth: 1
+        -   uses: actions/checkout@v4
+            with:
+                submodules: true
+                fetch-depth: 1
 
-    - name: Install Moxunit and MOcov
-      run: |
-        git clone https://github.com/MOxUnit/MOxUnit.git --depth 1
-        git clone https://github.com/MOcov/MOcov.git --depth 1
+        -   name: Install Moxunit and MOcov
+            run: |
+                git clone https://github.com/MOxUnit/MOxUnit.git --depth 1
+                git clone https://github.com/MOcov/MOcov.git --depth 1
 
-    - name: Run tests
-      uses: matlab-actions/run-command@v2.1.1
-      with:
-        command: cd(fullfile(getenv('GITHUB_WORKSPACE'), '.github', 'workflows')); run run_tests_ci;
+        -   name: Run tests
+            uses: matlab-actions/run-command@v2.1.1
+            with:
+                command: cd(fullfile(getenv('GITHUB_WORKSPACE'), '.github', 'workflows')); run run_tests_ci;
 
-    - name: Check logs unix
-      if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
-      run: grep -q 0 test_report.log || { echo "Some tests failed. Check the 'Run tests' step to know which ones." >&2; exit 1; }
-    - name: Check logs windows
-      if: matrix.os == 'windows-latest'
-      run: |
-        if (-not (Get-Content test_report.log | Select-String -Pattern "0")) {
-          throw "Some tests failed.  Check the 'Run tests' step to know which ones."
-        }
+        -   name: Check logs unix
+            if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+            run: grep -q 0 test_report.log || { echo "Some tests failed. Check the 'Run tests' step to know which ones." >&2; exit 1; }
+        -   name: Check logs windows
+            if: matrix.os == 'windows-latest'
+            run: |
+                if (-not (Get-Content test_report.log | Select-String -Pattern "0")) {
+                  throw "Some tests failed.  Check the 'Run tests' step to know which ones."
+                }
 
-    - name: Code coverage
-      if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+        -   name: Code coverage
+            if: matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
       # no coverage on windows as long as MOcov does not support it
       # see https://github.com/MOcov/MOcov/issues/28
-      uses: codecov/codecov-action@v4
-      with:
-        file: coverage.xml   # optional
-        flags: ${{ matrix.os }}_matlab-${{ matrix.version }}
-        name: codecov-umbrella   # optional
-        fail_ci_if_error: false   # optional (default = false)
-        token: ${{ secrets.CODECOV_TOKEN }}
+            uses: codecov/codecov-action@v4
+            with:
+                file: coverage.xml # optional
+                flags: ${{ matrix.os }}_matlab-${{ matrix.version }}
+                name: codecov-umbrella # optional
+                fail_ci_if_error: false # optional (default = false)
+                token: ${{ secrets.CODECOV_TOKEN }}
