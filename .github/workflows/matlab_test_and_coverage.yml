@@ -16,6 +16,11 @@ on:
     pull_request:
         branches: ['*']
 
+# cancel previous run on that branch
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     matlab_tests:
 
