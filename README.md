@@ -2,7 +2,7 @@
 When you have set up your repo you may need to change those badges
 -->
 
-[![MISS_HIT](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit.yml/badge.svg?branch=main)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/miss_hit.yml)
+[![pre-commit](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/run_precommit.yml/badge.svg)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/run_precommit.yml)
 [![MATLAB: test and coverage](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/matlab_test_and_coverage.yaml/badge.svg)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/matlab_test_and_coverage.yaml)
 [![Octave: test and coverage](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/octave_test_and_coverage.yml/badge.svg?branch=main)](https://github.com/Remi-Gau/template_matlab_analysis/actions/workflows/octave_test_and_coverage.yml)
 [![codecov](https://codecov.io/gh/Remi-Gau/template_matlab_analysis/branch/master/graph/badge.svg?token=aFXb7WSAsm)](https://codecov.io/gh/Remi-Gau/template_matlab_analysis)
