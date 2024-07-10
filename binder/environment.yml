@@ -1,11 +1,11 @@
 ---
 channels:
 
-- default
-- conda-forge
+-   default
+-   conda-forge
 
 dependencies:
 
-- octave_kernel
-- texinfo
-- jupyterlab
+-   octave_kernel
+-   texinfo
+-   jupyterlab
